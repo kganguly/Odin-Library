@@ -137,13 +137,13 @@ input[type="submit"]:hover {
 }
 
 .readmark {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.25);
     color: rgba(239, 239, 239, 0.3);
     /* opacity: 0.5; */
     transition: 0.5s;
     display: inline-block;
-    border-radius: 50%;
-    width: 1.4em;
+    border-radius: 30%;
+    width: 1.3em;
     height: 1.3em;
     line-height: 1.3em;
     font-size: 24px;
@@ -159,7 +159,7 @@ input[type="submit"]:hover {
 }
 
 .readmark.read {
-    color: rgba(124, 253, 4, 0.7);
+    color: rgba(124, 253, 4, 0.45);
     font-weight: 600;
 }
 
