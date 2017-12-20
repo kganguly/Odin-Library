@@ -10,5 +10,29 @@
 </head>
 
 <body>
+    <main>
+        <header>
+            <h1>Books</h1>
+            <button id="newBookBtn">+</button>
+        </header>
+        <ul id="books"></ul>
+    </main>
+    <div class="modal">
+        <div class="modal-content">
+            <form>
+                <label for="new-title">Title:</label>
+                <input type="text" name="title" placeholder="New Title..." id="new-title">
 
+                <label for="new-author">Author:</label>
+                <input type="text" name="author" placeholder="New Author..." id="new-author">
+
+                <label for="new=numPAges">Number of Pages</label>
+                <input type="text" placeholder="New Number of Pages..." name="numPages">
+
+                <label for="new-read">Read</label>
+                <input type="checkbox" name="read" id="new-read">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
 </body>
