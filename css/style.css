@@ -9,7 +9,6 @@
 html,
 body {
     min-height: 100%;
-    position: relative;
     text-align: center;
 }
 
@@ -19,6 +18,7 @@ main {
     max-width: 80%;
     margin: 20px auto;
     background: silver;
+    border-radius: 5px;
 }
 
 header {
@@ -55,13 +55,23 @@ ul {
     margin: 0 20px 20px;
     background: yellow;
     position: relative;
+    border-radius: 4px;
 }
 
-.book>button {
+.remove-button {
     position: absolute;
     top: 0;
     right: 0;
     border: none;
+    border-radius: 0 4px 0 8px;
+    opacity: 0.6;
+    color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+
+.remove-button:hover {
+    opacity: 0.8;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .modal {
@@ -90,7 +100,6 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    margin: 0 auto;
     text-align: left;
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -125,4 +134,35 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+.readmark {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(239, 239, 239, 0.3);
+    /* opacity: 0.5; */
+    transition: 0.5s;
+    display: inline-block;
+    border-radius: 50%;
+    width: 1.4em;
+    height: 1.3em;
+    line-height: 1.3em;
+    font-size: 24px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.readmark:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(239, 239, 239, 0.4);
+}
+
+.readmark.read {
+    color: rgba(124, 253, 4, 0.7);
+    font-weight: 600;
+}
+
+.readmark.read:hover {
+    color: rgba(5, 197, 5, 0.7);
 }

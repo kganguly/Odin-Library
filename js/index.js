@@ -31,23 +31,33 @@ function render() {
     const bookNodes = document.createDocumentFragment();
     for (let i in myLibrary) {
         const book = myLibrary[i];
+
         const li = document.createElement("li");
         li.classList.add("book");
+
         let p = document.createElement("p");
         p.classList.add("title");
         p.textContent = book.title;
         li.appendChild(p);
+
         p = document.createElement("p");
         p.textContent = book.author;
         li.appendChild(p);
+
         p = document.createElement("p");
         p.textContent = book.numPages;
         li.appendChild(p);
-        p = document.createElement("p");
-        p.textContent = book.read ? "Read" : "Unread";
-        li.appendChild(p);
+
+        let div = document.createElement("div");
+        div.classList.add("readmark");
+        if (book.read) div.classList.add("read");
+        div.innerText = "\u2713";
+        div.addEventListener("click", () => toggleRead(i));
+        li.appendChild(div);
+
         let button = document.createElement("button");
         button.textContent = "X";
+        button.classList.add("remove-button");
         button.addEventListener("click", () => removeBookFromLibrary(i));
         li.appendChild(button);
         bookNodes.appendChild(li);
@@ -87,4 +97,10 @@ function showModal() {
 function hideModal() {
     const modal = document.getElementsByClassName("modal")[0];
     modal.classList.remove("show-modal");
+}
+
+function toggleRead(index) {
+    const book = myLibrary[index];
+    book.read = !book.read;
+    event.target.classList.toggle("read");
 }
